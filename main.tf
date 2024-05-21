@@ -17,13 +17,13 @@ resource "aws_instance" "app_server" {
   ami           = "ami-09040d770ffe2224f"
   instance_type = "t2.micro"
   key_name = "iac-alura"
-  user_data = <<-EOF
-    #!/bin/bash
-    cd /home/ubuntu
-    echo "<h1>XUXUCO</h1>" > index.html
-    nohup busybox httpd -f -p 8080 &
+  # user_data = <<-EOF
+  #   #!/bin/bash
+  #   cd /home/ubuntu
+  #   echo "<h1>XUXUCO</h1>" > index.html
+  #   nohup busybox httpd -f -p 8080 &
 
-     EOF
+  #    EOF
   tags = {
     Name = "Teste Aws"
   }
